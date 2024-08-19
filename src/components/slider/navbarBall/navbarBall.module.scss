@@ -1,0 +1,18 @@
+.navbarBall{
+    &__unactiveBall{
+        transition: 0.5s;
+        border-radius: 2rem;
+        background-color: var(--seceondary-color-1);
+        height: 1rem;
+        border: 1px solid var(--primary-color-1);
+        width: 1rem;
+    }
+    &__activeBall{
+        background-color: var(--primary-color-1);
+        border: 1px solid var(--primary-color-1);
+        width: 4rem;
+        transition: 0.5s;
+        border-radius: 2rem;
+        height: 1rem;
+    }
+}

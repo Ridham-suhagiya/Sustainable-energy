@@ -1,39 +1,63 @@
+import Email from "../assets/icons/Email";
+import Location from "../assets/icons/Location";
+import Phone from "../assets/icons/Phone";
+import ContactInfo from "../components/ContactInfo/ContactInfo";
+
 const Contact = () => {
     return (
-        <section id="contact">
-            <h2 className="text-3xl font-bold text-green-600 my-4">Contact Us</h2>
-            <p>For any inquiries or clarifications, please contact:</p>
-            <p>
-                <strong>Dr. Gyanendra Kumar</strong>, PhD, Sustainability Expert, Chartered Engineer
-            </p>
-            <p>Phone: +911203119815, 9760239685</p>
-            <p>
-                Email:{" "}
-                <a href="mailto:gkattri.founder@ecosustainablesolutions.org" className="text-blue-500 hover:underline">
-                    gkattri.founder@ecosustainablesolutions.org
-                </a>
-            </p>
-            <p>
-                LinkedIn:{" "}
-                <a
-                    href="https://www.linkedin.com/in/gyanendra-kumar-ph-d-364b6130"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
+        <section id="contact" className="max-w-max mx-auto p-8">
+            <ContactInfo
+                data={[
+                    {
+                        icon: <Location parentStyles={{ fill: "white", height: "4rem" }} />,
+                        cardInfoTitle: "Location",
+                        cardInfoText: "Delhi, India ",
+                    },
+                    {
+                        icon: <Phone parentStyles={{ fill: "white", height: "4rem" }} />,
+                        cardInfoTitle: "Contect",
+                        cardInfoText: "+911203119815, 9760239685 ",
+                    },
+                    {
+                        icon: <Email parentStyles={{ fill: "white", height: "4rem" }} />,
+                        cardInfoTitle: "24/7 Support",
+                        cardInfoText: "gkattri.founder@ecosustainablesolutions.org",
+                    },
+                ]}
+            />
+
+            <form className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-40 my-5">
+                <input
+                    type="text"
+                    placeholder="Name"
+                    className="w-full h-14 outline-none text-gray-500 border border-gray-300 rounded-md px-6 mb-5 focus:border-black focus:ring-2 focus:ring-black transition-colors"
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full h-14 outline-none text-gray-500 border border-gray-300 rounded-md px-6 mb-5 focus:border-black focus:ring-2 focus:ring-black transition-colors"
+                />
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="w-full h-14 outline-none text-gray-500 border border-gray-300 rounded-md px-6 mb-5 focus:border-black focus:ring-2 focus:ring-black transition-colors"
+                />
+                <input
+                    type="text"
+                    placeholder="Subject"
+                    className="w-full h-14 outline-none text-gray-500 border border-gray-300 rounded-md px-6 mb-5 focus:border-black focus:ring-2 focus:ring-black transition-colors"
+                />
+                <textarea
+                    placeholder="Message"
+                    className="w-full h-32 sm:col-span-2 outline-none text-gray-500 border border-gray-300 rounded-md px-6 mb-5 focus:border-black focus:ring-2 focus:ring-black transition-colors"
+                ></textarea>
+                <button
+                    type="submit"
+                    className="w-full sm:col-span-2 h-14 bg-black text-white rounded-md hover:bg-gray-800 transition-colors duration-200"
                 >
-                    https://www.linkedin.com/in/gyanendra-kumar-ph-d-364b6130
-                </a>
-            </p>
-            <p>
-                ResearchGate:{" "}
-                <a
-                    href="https://www.researchgate.net/profile/Gyanendra-Attri"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                >
-                    https://www.researchgate.net/profile/Gyanendra-Attri
-                </a>
-            </p>
-            <img src="placeholder.jpg" alt="Contact Us" className="my-8 mx-auto w-72 h-48 bg-gray-300" />
+                    Submit
+                </button>
+            </form>
         </section>
     );
 };

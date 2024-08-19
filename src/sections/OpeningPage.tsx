@@ -1,71 +1,62 @@
+import { get } from "lodash";
 import headerBackground from "../assets/header_background.webp";
+import AnchorTags from "../components/anchorTags/AnchorTags";
+import { AnchorTagsTexts } from "../constants/display-constants";
+import { useEffect, useState } from "react";
 
 const OpeningPage = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                // Adjust the scroll position as needed
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <div className="relative overflow-auto h-100">
-            <img src={headerBackground} alt="Header Background" className="w-full h-2/3 object-cover" />
-            <div className="absolute inset-0 flex bg-black bg-opacity-30 p-4 flex-col justify-between">
-                <div className="flex items-center">
-                    <h1 className="text-2xl font-bold text-white m-7">Sustainable Solutions</h1>
-                    <nav className="m-7 w-2/3 self-start">
-                        <ul className="flex space-x-4 w-full justify-between">
-                            <div className="flex gap-4">
-                                <li>
-                                    <a
-                                        href="/#home"
-                                        className="text-black bg-gray-200 hover:bg-green-200 text-sm py-2 px-4 rounded-full"
-                                    >
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/#about"
-                                        className="text-black bg-gray-200 hover:bg-green-200 text-sm py-2 px-4 rounded-full"
-                                    >
-                                        About
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/#projects"
-                                        className="text-black bg-gray-200 hover:bg-green-200 text-sm py-2 px-4 rounded-full"
-                                    >
-                                        Projects
-                                    </a>
-                                </li>
-                            </div>
-                            <li>
-                                <a
-                                    href="/#contact"
-                                    className="text-black bg-gray-200 hover:bg-green-200 text-sm py-2 px-4 rounded-full"
-                                >
-                                    Contact Us
-                                </a>
-                            </li>
-                        </ul>
+        <div className="relative h-screen overflow-hidden">
+            <img src={headerBackground} alt="Header Background" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-8">
+                {/* Header Section */}
+                <div className="flex items-center justify-between w-full">
+                    <div className="text-white text-3xl font-bold w-2/3">Sustainable Solutions</div>
+                    <nav
+                        className={`flex rounded-xl p-4 justify-center fixed left-1/2 transform -translate-x-1/2 transition-colors duration-300 z-50 text-white w-3/4 px-4 ${
+                            isScrolled ? "bg-black bg-opacity-90 shadow-lg top-0" : "bg-transparent ml-52"
+                        }`}
+                    >
+                        <div className="flex space-x-14 items-center justify-around gap-2">
+                            {AnchorTagsTexts.map((achorData) => (
+                                <AnchorTags href={get(achorData, "href")} text={get(achorData, "text")} />
+                            ))}
+                        </div>
+                        <div className="flex bg-green-500 px-4 rounded-xl items-center">
+                            <a href="/#contact" className="text-white text-lg hover:underline">
+                                Contact
+                            </a>
+                        </div>
                     </nav>
                 </div>
-                <div className="mt-60 mx-4 h-100">
-                    <h2 className="text-4xl font-bold text-white leading-tight">
+                <div className="text-center text-white my-8">
+                    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                         Leading the Way in <span className="text-green-500">Sustainable</span> Materials
-                    </h2>
-                    <p className="text-lg text-white my-3">Sculpting the Future with Green Materials</p>
+                    </h1>
                 </div>
-                <div className="container m-4 flex items-center">
-                    <div className="md:w-1/2 text-center md:text-left bg-header-background bg-cover bg-no-repeat p-8">
-                        <div className="flex justify-center md:justify-start space-x-4">
-                            <button className="bg-white hover:bg-gray-300 text-black py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                Selected projects
-                            </button>
-                            <button className="bg-white text-black py-2 px-4 rounded-full border border-black hover:border-2 hover:border-black transition-all duration-300">
-                                Work with Us
-                            </button>
-                        </div>
-                    </div>
-                    <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
-                        <div className="w-72 h-48 bg-gray-300"></div>
-                    </div>
+                <div className="flex flex-col items-center mt-8">
+                    <a
+                        href="/#about"
+                        className="bg-green-500 hover:bg-green-600 text-white text-lg px-6 py-3 rounded-full shadow-lg transition-shadow duration-300 mb-4"
+                    >
+                        Know More
+                    </a>
                 </div>
             </div>
         </div>

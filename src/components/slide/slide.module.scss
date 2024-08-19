@@ -1,0 +1,45 @@
+.slideCover{
+
+    font-size: 10rem;
+    z-index: 10;
+    background-color: unset;
+    width: inherit;
+    height: inherit;
+    .slide{
+        background-image: linear-gradient(to right, var(--primary-color-1) 60%, var(--seceondary-color-1) 40%);
+        display: flex;
+        width: 75rem;
+        margin: 0rem 2.5rem;
+        height: 37rem;
+        align-items: center;
+        border-radius: 5rem;
+        justify-content: center;
+        position: relative;
+        margin-right: 3rem;
+        &__background_text{
+            color: var(--seceondary-color-1);
+            font-family: "Protest Strike", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+            border:2px solid var(--seceondary-color-1);
+            background-image: linear-gradient(to right, var(--seceondary-color-1) 64%, var(--primary-color-1) 40%);
+            background-size: 100%;
+            background-repeat: repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;            
+        }
+        &__front_text{
+            position: absolute;
+            color: lightgray;
+            font-weight: var(--main-font-size);
+            margin: 0;
+            font-optical-sizing: auto;
+            font-family: "Syne", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 3rem;
+        }
+    }
+
+}
+
