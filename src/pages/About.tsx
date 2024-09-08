@@ -84,7 +84,7 @@ const About = () => {
                     />
                 </div>
             </div>
-            <div className="w-full flex justify-center m-4 z-0">
+            <div className="w-full flex justify-center m-4">
                 <div className="w-[80%]">
                     <GreenBackgroundCard
                         Component={ButtonCard}

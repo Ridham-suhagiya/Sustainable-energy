@@ -9,7 +9,7 @@ const Projects = () => {
             id="projects"
             className="bg-white text-center flex flex-col items-center relative py-4 z-10"
         >
-            <div className="w-full flex flex-col rounded-lg justify-center mt-44">
+        <div className="w-full flex flex-col rounded-lg justify-center mt-44">
                 <h1 className="text-7xl text-black self-start inline-block m-10">
                     Our Work
                 </h1>
@@ -17,14 +17,16 @@ const Projects = () => {
                     {projectInfo.map((project: any, ind: number) => (
                         <ProjectCard data={project} key={ind} />
                     ))}
-                    <div className="col-span-full m-4">
-                        <GreenBackgroundCard
-                            Component={ButtonCard}
-                            data={{
-                                text: "Join Us in this",
-                                buttonText: "Join us",
-                            }}
-                        />
+                    <div className="col-span-full w-full flex justify-center">
+                        <div className="w-[80%]">
+                            <GreenBackgroundCard
+                                Component={ButtonCard}
+                                data={{
+                                    text: "Join Us in this",
+                                    buttonText: "Join us",
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
