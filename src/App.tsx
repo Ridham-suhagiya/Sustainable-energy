@@ -17,7 +17,6 @@ function App() {
         const handleScroll = () => {
             console.log(target.current.scrollTop);
             if (target.current.scrollTop > 300) {
-                console.log("ji");
                 // setShowGoUp(true);
                 setIsScrolled(true);
             } else {
