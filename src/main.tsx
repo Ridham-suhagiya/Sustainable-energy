@@ -12,5 +12,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <App />
             </SliderBarContextProvider>
         </BrowserRouter>
-    </React.StrictMode>,
+    </React.StrictMode>
 );

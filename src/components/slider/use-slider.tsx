@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { isNull } from "lodash";
 import { AboutCards } from "../../constants/display-constants";
 
-const UseSlider = (sliderElement: any) => {
+const UseSlider = ({ sliderElement, scrollValue }: any) => {
     const [slideIndex, setSlideIndex] = useState<number>(0);
     const [sliderWidthArray, setSliderWidthArray] = useState<number[]>([0]);
     const [currScrollWidth, setCurrScrollWidth] = useState<number>(0);
@@ -56,9 +56,9 @@ const UseSlider = (sliderElement: any) => {
     useEffect(() => {
         if (!isNull(sliderElement)) {
             if (!slideEvent) {
-                sliderElement.current.scrollTo(currScrollWidth, 0);
+                sliderElement.current.scrollTo( currScrollWidth, 0);
             } else {
-                sliderElement.current.scrollTo(currScrollWidth, 0);
+                sliderElement.current.scrollTo( currScrollWidth, 0);
             }
         }
     }, [currScrollWidth]);

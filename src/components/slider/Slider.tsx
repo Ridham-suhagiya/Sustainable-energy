@@ -8,23 +8,36 @@ import { RightSliderButton } from "./RightSliderButton";
 interface SliderType {
     cardsData: any[];
     CardElement: ComponentType<any>;
+    stylesOntheListOfCards?: any;
+    scrollValue?: number;
 }
 
 const Slider: React.FC<SliderType> = (props) => {
-    const { cardsData, CardElement } = props;
+    const { cardsData, CardElement, stylesOntheListOfCards, scrollValue } =
+        props;
     const sliderElement = useRef(null);
-    const { prevSlide, nextSlide, slideIndex } = UseSlider(sliderElement);
+    const { prevSlide, nextSlide, slideIndex } = UseSlider({
+        sliderElement,
+        scrollValue,
+    });
 
     return (
-        <div className="flex flex-col items-center gap-4 pt-24 h-[calc(100%-10rem)] justify-center w-full">
-            <div className="flex overflow-hidden w-[40rem] h-[50rem] scroll-smooth" ref={sliderElement}>
+        <div className="flex flex-col items-center justify-center m-10">
+            <div
+                className="flex overflow-hidden w-full scroll-smooth"
+                ref={sliderElement}
+                style={stylesOntheListOfCards}
+            >
                 {cardsData.map((data, index) => (
                     <Slide key={index} Component={CardElement} data={data} />
                 ))}
             </div>
             {cardsData.length > 1 && (
                 <>
-                    <SliderNavbar numberOfPages={cardsData.length} selectedSlideIndex={slideIndex} />
+                    {/* <SliderNavbar
+                        numberOfPages={cardsData.length}
+                        selectedSlideIndex={slideIndex}
+                    /> */}
                     <div className="flex">
                         <LeftSliderButton
                             buttonClass={

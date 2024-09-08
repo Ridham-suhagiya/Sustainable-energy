@@ -1,21 +1,9 @@
-export interface RecycleIconInterface {
-    height: number;
-    width: number;
-    color: string;
-}
+import { IconInterface } from "../../types/icon";
 
-const RecycleIcon: React.FC<RecycleIconInterface> = (props) => {
-    const { height, width, color } = props;
+const RecycleIcon: React.FC<IconInterface> = (props) => {
+    const { parentStyles } = props;
     return (
-        <svg
-            fill={color}
-            height={height}
-            width={width}
-            version="1.1"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 32 32"
-        >
+        <svg style={parentStyles} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <path
                 id="recycle_1_"
                 d="M20,30.36c-0.107,0-0.212-0.049-0.281-0.136l-4-5c-0.105-0.131-0.105-0.318,0-0.449l4-5

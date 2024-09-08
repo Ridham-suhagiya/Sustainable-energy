@@ -1,54 +1,31 @@
-import ImageSlide from "../components/slider/ImageSlide";
-import Slider from "../components/slider/Slider";
-import TextCard from "../components/slider/textCard";
-import {
-    project1Cards,
-    project1Info,
-    project2Cards,
-    project2Info,
-    project3Cards,
-    project3Info,
-} from "../constants/display-constants";
+import GreenBackgroundCard from "../components/GreenBackgroundCard/ContactInfo";
+import ButtonCard from "../components/GreenBackgroundCard/JoinUsCard";
+import ProjectCard from "../components/slider/ProjectCard";
+import { projectInfo } from "../constants/display-constants";
 
 const Projects = () => {
     return (
-        <div id="projects" className=" bg-[#FBF6F0] text-center flex flex-col items-center space-y-5">
-            {/* Project 1 */}
-            <div
-                className="w-full flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-8 rounded-lg bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url('src/assets/projectsbackgroundImage.jpg')` }}
-            >
-                <div className=" flex-1 flex justify-center items-center">
-                    <Slider cardsData={project1Cards} CardElement={ImageSlide} />
-                </div>
-                <div className=" flex-1 flex justify-center items-center">
-                    <Slider cardsData={project1Info} CardElement={TextCard} />
-                </div>
-            </div>
-
-            {/* Project 2 */}
-            <div
-                className="w-full flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-8 p-8 rounded-lg bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url('src/assets/projectsbackgroundImage.jpg')` }}
-            >
-                <div className=" flex-1 flex justify-center items-center">
-                    <Slider cardsData={project2Cards} CardElement={ImageSlide} />
-                </div>
-                <div className=" flex-1 flex justify-center items-center">
-                    <Slider cardsData={project2Info} CardElement={TextCard} />
-                </div>
-            </div>
-
-            {/* Project 3 */}
-            <div
-                className="w-full flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-8 p-8 rounded-lg bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url('src/assets/projectsbackgroundImage.jpg')` }}
-            >
-                <div className=" flex-1 flex justify-center items-center">
-                    <Slider cardsData={project3Cards} CardElement={ImageSlide} />
-                </div>
-                <div className=" flex-1 flex justify-center items-center">
-                    <Slider cardsData={project3Info} CardElement={TextCard} />
+        <div
+            id="projects"
+            className="bg-white text-center flex flex-col items-center relative py-4 z-10"
+        >
+            <div className="w-full flex flex-col rounded-lg justify-center mt-44">
+                <h1 className="text-7xl text-black self-start inline-block m-10">
+                    Our Work
+                </h1>
+                <div className="grid grid-cols-3 gap-2 content-normal">
+                    {projectInfo.map((project: any, ind: number) => (
+                        <ProjectCard data={project} key={ind} />
+                    ))}
+                    <div className="col-span-full m-4">
+                        <GreenBackgroundCard
+                            Component={ButtonCard}
+                            data={{
+                                text: "Join Us in this",
+                                buttonText: "Join us",
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
