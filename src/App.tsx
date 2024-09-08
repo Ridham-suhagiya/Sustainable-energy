@@ -10,7 +10,7 @@ import AnchorTags from "./components/anchorTags/AnchorTags";
 import { get } from "lodash";
 
 function App() {
-    const [showGoUp, setShowGoUp] = useState(false);
+    // const [showGoUp, setShowGoUp] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const target: any = useRef(null);
     useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
             console.log(target.current.scrollTop);
             if (target.current.scrollTop > 300) {
                 console.log("ji");
-                setShowGoUp(true);
+                // setShowGoUp(true);
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);

@@ -1,6 +1,6 @@
 import { type ComponentType, useRef } from "react";
 import Slide from "../slide/Slide";
-import SliderNavbar from "./sliderNavbar/SliderNavbar";
+// import SliderNavbar from "./sliderNavbar/SliderNavbar";
 import UseSlider from "./use-slider";
 import { LeftSliderButton } from "./LeftSliderButton";
 import { RightSliderButton } from "./RightSliderButton";
@@ -16,7 +16,7 @@ const Slider: React.FC<SliderType> = (props) => {
     const { cardsData, CardElement, stylesOntheListOfCards, scrollValue } =
         props;
     const sliderElement = useRef(null);
-    const { prevSlide, nextSlide, slideIndex } = UseSlider({
+    const { prevSlide, nextSlide } = UseSlider({
         sliderElement,
         scrollValue,
     });

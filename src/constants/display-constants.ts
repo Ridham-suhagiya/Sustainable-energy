@@ -1,9 +1,6 @@
 import project1 from "../assets/projects/project1.jpg";
 import project2 from "../assets/projects/project2.jpg";
-import project3 from "../assets/projects/project3.jpg";
 import project4 from "../assets/projects/project4.jpg";
-import project5 from "../assets/projects/project2Image2.jpg";
-import project6 from "../assets/projects/project6.jpg";
 import plantIcon1 from "../assets/icons/plants.jpg";
 import plantIcon3 from "../assets/icons/plants3.jpg";
 

@@ -1,10 +1,11 @@
 import React from "react";
-import RecycleIcon, { RecycleIconInterface } from "../assets/icons/RecycleIcon";
+import RecycleIcon from "../assets/icons/RecycleIcon";
+import { IconInterface } from "../types/icon";
 
 interface CardType {
     header: string;
     paragraph: string;
-    IconStyles: RecycleIconInterface;
+    IconStyles: IconInterface;
 }
 
 const Card: React.FC<CardType> = (props) => {
